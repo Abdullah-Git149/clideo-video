@@ -8,8 +8,6 @@ function Home() {
     const handleVideoUpload = (e) => {
         e.preventDefault()
         setVideoFilePath(URL.createObjectURL(e.target.files[0]))
-        localStorage.setItem("myvideo", videoFilePath)
-
     }
     const navigate = useNavigate()
     useEffect(() => {
@@ -26,8 +24,8 @@ function Home() {
 
 
             <div >
-                {/* <VideoPage videoFilePath={videoFilePath} /> */}
-                <ReactPlayer url={videoFilePath} width="100%" height="100%" controls={true} />
+                <VideoPage videoFilePath={videoFilePath} />
+                {/* <ReactPlayer url={videoFilePath} width="100%" height="100%" controls={true} /> */}
 
             </div>
         </div>
