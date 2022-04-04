@@ -5,16 +5,21 @@ import ReactPlayer from "react-player";
 import VideoPage from "./components/VideoPage"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from './components/Home';
+import Store from './store';
+import { Provider } from "react-redux"
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/videopage" element={<VideoPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Provider store={Store}>
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/videopage" element={<VideoPage />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
 
     </div>
   );
